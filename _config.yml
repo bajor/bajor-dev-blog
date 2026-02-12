@@ -1,0 +1,15 @@
+title: bajor.dev
+description: Personal dev blog
+url: "https://bajor.github.io"
+baseurl: "/bajor-dev-blog"
+markdown: kramdown
+permalink: /:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - Makefile
+  - README.md
+  - ARCHITECTURE_DIFF.md
