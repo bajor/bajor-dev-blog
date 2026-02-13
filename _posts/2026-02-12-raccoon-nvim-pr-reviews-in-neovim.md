@@ -81,17 +81,11 @@ I'm still figuring this out, but stepping through commits like this genuinely ma
 
 If a commit has more hunks than the grid fits, `<leader>j`/`<leader>k` pages through them.
 
-### Maximizing a Cell
+### Maximizing a Cell & File Tree
 
-`<leader>m1` through `<leader>m9` maximizes a grid cell into a full floating window. Good for large files. `q` to close.
+`<leader>m1` through `<leader>m9` maximizes a grid cell into a full floating window. Good for large files. `q` to close. `<leader>f` moves focus to the file tree — navigate with `j`/`k`, search with `/`, press Enter to view a file's full content at the current commit. `<leader>f` again to go back.
 
-![GIF: Maximizing a grid cell for a full file view](placeholder-maximize.gif)
-
-### File Tree Browsing
-
-`<leader>f` moves focus to the file tree. Navigate with `j`/`k`, search with `/`, press Enter to view a file's full content at the current commit. `<leader>f` again to go back.
-
-![GIF: Browsing the file tree, viewing a file at a specific commit](placeholder-file-tree.gif)
+![GIF: Maximizing a grid cell and browsing the file tree](placeholder-maximize-and-tree.gif)
 
 ### Commit Viewer Keymaps
 
