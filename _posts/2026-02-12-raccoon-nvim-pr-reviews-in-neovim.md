@@ -112,7 +112,7 @@ This is where things get interesting with AI agents. Run `:Raccoon local`, selec
 
 {% include video.html src="/assets/videos/raccoon/current-changes.mov" %}
 
-When the agent commits, new commits appear in the sidebar automatically. Your selection stays where it is — nothing jumps around.
+When the agent commits, new commits appear in the sidebar automatically.
 
 Local mode coexists with PR reviews. Entering pauses any active PR session, exiting resumes it.
 
