@@ -24,7 +24,7 @@ Review GitHub pull requests inside Neovim. Browse diffs with syntax highlighting
 
 `:Raccoon prs` (or `<leader>pr`) opens a floating picker with your open PRs. Pick one, press Enter.
 
-![GIF: Opening the PR picker, selecting a PR](placeholder-open-pr.gif)
+{% include video.html src="/assets/videos/raccoon/open-pr.mov" %}
 
 Raccoon shallow-clones the PR branch locally. Neovim's working directory switches to that clone — your LSP, treesitter, and everything else work on the actual source. Reopening the same PR later is fast (fetch, not clone).
 
@@ -36,7 +36,7 @@ You can also open by URL: `:Raccoon open https://github.com/owner/repo/pull/42`
 
 Changed files open with inline diff highlighting. Green background + `+` signs for additions. Red background + `-` signs for deletions (shown as virtual text).
 
-![GIF: Navigating diff hunks and files with highlights](placeholder-review-diffs.gif)
+{% include video.html src="/assets/videos/raccoon/review-diffs.mov" %}
 
 Navigation:
 
@@ -53,7 +53,7 @@ The statusline shows `[1/3] ✓ In sync` — file 1 of 3, up to date. If someone
 
 `<leader>c` at cursor → write comment → `<leader>s` to submit.
 
-![GIF: Writing an inline comment and submitting it](placeholder-comments.gif)
+{% include video.html src="/assets/videos/raccoon/comments.mov" %}
 
 Comments appear as highlights with a 💬 in the sign column. `<leader>ll` lists all comments. `<leader>r` resolves a thread, `<leader>u` unresolves.
 
@@ -65,7 +65,7 @@ When an AI agent creates a PR, the flat diff is often overwhelming. But the agen
 
 Commit viewer mode lets you replay the agent's work move by move. Press `<leader>cm`.
 
-![GIF: Entering commit viewer mode, grid layout appearing](placeholder-commit-viewer.gif)
+{% include video.html src="/assets/videos/raccoon/commit-viewer.mov" %}
 
 The screen splits into three panels:
 
@@ -85,7 +85,7 @@ If a commit has more hunks than the grid fits, `<leader>j`/`<leader>k` pages thr
 
 `<leader>m1` through `<leader>m9` maximizes a grid cell into a full floating window. Good for large files. `q` to close. `<leader>f` moves focus to the file tree — navigate with `j`/`k`, search with `/`, press Enter to view a file's full content at the current commit. `<leader>f` again to go back.
 
-![GIF: Maximizing a grid cell and browsing the file tree](placeholder-maximize-and-tree.gif)
+{% include video.html src="/assets/videos/raccoon/maximize-and-tree.mov" %}
 
 ### Commit Viewer Keymaps
 
@@ -104,33 +104,17 @@ If a commit has more hunks than the grid fits, `<leader>j`/`<leader>k` pages thr
 
 `:Raccoon local` opens the commit viewer on any git repo — no PR, no GitHub token.
 
-![GIF: Local commit viewer browsing repo history](placeholder-local-commits.gif)
+{% include video.html src="/assets/videos/raccoon/local-commits.mov" %}
 
 Same layout: file tree, diff grid, commit sidebar. But the first sidebar entry is **"Current changes"** — a live view of uncommitted work (staged + unstaged vs HEAD).
 
 This is where things get interesting with AI agents. Run `:Raccoon local`, select "Current changes", and watch the agent's edits flow in real-time as it works in another terminal. The view polls every 3 seconds, backs off to 30 seconds when idle, and snaps back to fast polling when changes appear.
 
-![GIF: Watching "Current changes" update in real-time as an agent writes code](placeholder-current-changes.gif)
+{% include video.html src="/assets/videos/raccoon/current-changes.mov" %}
 
 When the agent commits, new commits appear in the sidebar automatically. Your selection stays where it is — nothing jumps around.
 
 Local mode coexists with PR reviews. Entering pauses any active PR session, exiting resumes it.
-
----
-
-## Merging
-
-When you're satisfied with what the agent produced:
-
-```
-:Raccoon merge
-:Raccoon squash
-:Raccoon rebase
-```
-
-Or `<leader>rr` to pick a method.
-
-![GIF: Merging a PR from Neovim](placeholder-merge.gif)
 
 ---
 

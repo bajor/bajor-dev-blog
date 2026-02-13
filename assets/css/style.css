@@ -190,6 +190,9 @@ img {
   font-style: italic;
   color: var(--text-color-alt);
 }
+video {
+  border: var(--border-thickness) solid var(--text-color-alt);
+}
 
 details {
   border: var(--border-thickness) solid var(--text-color);
