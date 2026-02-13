@@ -1,7 +1,7 @@
 title: bajor.dev
 description: Personal dev blog
-url: "https://bajor.github.io"
-baseurl: "/bajor-dev-blog"
+url: "https://bajor.dev"
+baseurl: ""
 markdown: kramdown
 permalink: /:title/
 
