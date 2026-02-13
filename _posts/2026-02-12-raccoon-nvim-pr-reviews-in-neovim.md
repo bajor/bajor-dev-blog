@@ -6,65 +6,17 @@ date: 2026-02-12
 
 AI agents write code fast. Reviewing what they wrote is the bottleneck.
 
-My workflow looks like this: I describe what I want, an AI agent builds it, and I review the result. The building part is solved. The reviewing part — actually understanding what the agent produced before I ship it — that's where things break down.
+My workflow looks like this: I describe what I want, an AI agent builds it, and I review the result. The building part is solved. The reviewing part — actually understanding what the agent produced before I ship it — that's where I struggle. I get bored with code reviews quickly, especially long ones.
 
-GitHub's diff UI is fine for small human PRs. But when an agent generates 15 commits across 8 files, clicking through a browser isn't cutting it. I lose context. I miss things. And honestly, I just don't enjoy it — so I rush through it, which is exactly the wrong thing to do with AI-generated code that I'm putting my name on.
+GitHub's diff UI is fine for small human PRs. But when an agent generates 15 commits across 8 files, clicking through a browser isn't cutting it. I lose context. I miss things. And I rush through it, which is exactly the wrong thing to do with AI-generated code that I'm putting my name on.
 
-I use Neovim for everything. I figured if the review happened there — in my environment, with my keybindings, in my flow — I might actually do it properly. So I built [raccoon.nvim](https://github.com/bajor/nvim-raccoon).
-
-The design philosophy is influenced by Gabriella Gonzalez's [Beyond Agentic Coding](https://haskellforall.com/2026/02/beyond-agentic-coding). The argument is that good tools keep you in a flow state and in direct contact with the code. That's the guiding star here. I went from dreading PR reviews to clicking into them willingly. For me that's a massive shift.
+I've never been a full-time Neovim user. I've bounced between IntelliJ, VSCode with vim plugins — could never quite get Neovim to work smoothly with full projects (probably a skill issue). But I always loved vim-style navigation. And PR review doesn't require extensive editing — it's mostly navigating through a codebase and reading. That made Neovim feel like a natural fit. So I built [raccoon.nvim](https://github.com/bajor/nvim-raccoon).
 
 ---
 
 ## What It Does
 
 Review GitHub pull requests inside Neovim. Browse diffs with syntax highlighting, leave inline comments, step through commits one by one, and merge. No browser needed.
-
----
-
-## Installation
-
-Neovim 0.9+, [plenary.nvim](https://github.com/nvim-lua/plenary.nvim), and a GitHub token.
-
-Using [lazy.nvim](https://github.com/folke/lazy.nvim):
-
-```lua
-{
-  "bajor/nvim-raccoon",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    require("raccoon").setup()
-  end,
-}
-```
-
-Restart Neovim. Run `:Raccoon config` to create `~/.config/raccoon/config.json`:
-
-```json
-{
-  "github_username": "your-username",
-  "tokens": {
-    "your-username": "ghp_xxxxxxxxxxxxxxxxxxxx"
-  }
-}
-```
-
-![GIF: Running :Raccoon config, editing the config file](placeholder-config.gif)
-
-For the token — **classic** ([create here](https://github.com/settings/tokens)) with `repo` scope, or **fine-grained** ([create here](https://github.com/settings/personal-access-tokens)) with read/write access to code, issues, and pull requests.
-
-Multiple orgs? Add a token per org:
-
-```json
-{
-  "tokens": {
-    "your-username": "ghp_personal",
-    "work-org": "ghp_work"
-  }
-}
-```
-
-Done. Run `:Raccoon prs`.
 
 ---
 
@@ -109,8 +61,6 @@ Comments appear as highlights with a 💬 in the sign column. `<leader>ll` lists
 
 ## Commit Viewer Mode
 
-This is why I built the plugin.
-
 When an AI agent creates a PR, the flat diff is often overwhelming. But the agent didn't write it all at once — it worked commit by commit. First the types, then the implementation, then the tests. That sequence is the story of what happened. Losing it is like looking at a chess game's final position without seeing the moves.
 
 Commit viewer mode lets you replay the agent's work move by move. Press `<leader>cm`.
@@ -126,6 +76,8 @@ The screen splits into three panels:
 Press `j`/`k` in the sidebar to step through commits. The grid updates instantly. You see what the agent did at each step — the intent behind each commit becomes clear.
 
 This is where reviewing AI code stops feeling like a chore. You're not staring at a wall of changes. You're following a narrative. It's actually engaging.
+
+I'm still figuring this out, but stepping through commits like this genuinely makes PR review less painful — sometimes even enjoyable. I think that matters. As AI agents get better at writing code, reviewing what they wrote becomes the actual job (right after figuring out what you want and designing the solution). Learning to do that efficiently feels like the skill worth investing in. Gabriella Gonzalez's [Beyond Agentic Coding](https://haskellforall.com/2026/02/beyond-agentic-coding) put this into words better than I could — good tools keep you in flow and in direct contact with the code.
 
 If a commit has more hunks than the grid fits, `<leader>j`/`<leader>k` pages through them.
 
@@ -225,35 +177,4 @@ Shows: `✓ In sync` (green), `⚠ 2 commits behind` (yellow), `⛔ CONFLICTS` (
 
 ---
 
-## Config Reference
-
-```json
-{
-  "github_username": "your-username",
-  "github_host": "github.com",
-  "tokens": { "your-username": "ghp_..." },
-  "clone_root": "~/.local/share/nvim/raccoon/repos",
-  "pull_changes_interval": 300,
-  "commit_viewer": {
-    "grid": { "rows": 2, "cols": 2 },
-    "base_commits_count": 20
-  }
-}
-```
-
-| Field | Default | What it does |
-|-------|---------|--------------|
-| `github_host` | `"github.com"` | GitHub Enterprise: set to your GHE domain |
-| `clone_root` | `~/.local/share/nvim/raccoon/repos` | Where PR branches get cloned |
-| `pull_changes_interval` | `300` | Auto-sync interval (seconds) |
-| `commit_viewer.grid.rows` | `2` | Rows in diff grid |
-| `commit_viewer.grid.cols` | `2` | Columns in diff grid |
-| `commit_viewer.base_commits_count` | `20` | Base branch commits in sidebar |
-
----
-
-## Version
-
-This covers raccoon.nvim v0.9.1. The tool is actively evolving — check the [CHANGELOG](https://github.com/bajor/nvim-raccoon/blob/main/CHANGELOG.md) for the latest.
-
-Source: [github.com/bajor/nvim-raccoon](https://github.com/bajor/nvim-raccoon)
+Installation, configuration, and full reference are covered on [GitHub](https://github.com/bajor/nvim-raccoon).
