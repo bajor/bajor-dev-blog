@@ -58,6 +58,8 @@ Run `:Raccoon local`, select "Current changes", and watch the agent's edits appe
 
 {% include video.html src="/assets/videos/raccoon/current-changes.mov" %}
 
-As AI agents get better at writing code, reviewing what they wrote becomes the actual job. Learning to do that efficiently — staying close to the code while the agent runs — feels like the skill worth investing in. Gabriella Gonzalez's [Beyond Agentic Coding](https://haskellforall.com/2026/02/beyond-agentic-coding) put this into words better than I could: good tools keep you in flow state and in direct contact with the code. That's what raccoon.nvim is for.
+As AI agents get better at writing code, reviewing what they wrote becomes the actual job. Learning to do that efficiently — staying close to the code while the agent runs — feels like the skill worth investing in. Gabriella Gonzalez's [Beyond Agentic Coding](https://haskellforall.com/2026/02/beyond-agentic-coding) put this into words better than I could: good tools keep you in flow state and in direct contact with the code. That's what this plugin aspires to archieve.
 
 Source and installation on [GitHub](https://github.com/bajor/nvim-raccoon).
+
+Please have in mind that this is an early-stage project — if you run into rough edges or have ideas, please open an issue.
