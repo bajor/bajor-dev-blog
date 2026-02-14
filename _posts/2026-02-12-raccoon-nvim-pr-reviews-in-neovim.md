@@ -24,7 +24,7 @@ raccoon.nvim's commit viewer lets you step through a PR commit by commit. You se
 
 The screen splits into three panels. The file tree on the left highlights files touched in the current commit. The center shows a diff grid — 2x2 by default — with one syntax-highlighted hunk per cell. The commit sidebar on the right lists all PR commits. Press `j`/`k` in the sidebar to step through them. The grid updates instantly — you see what changed at each step and why.
 
-Any grid cell can expand to a full floating window for large files, and the file tree is searchable — navigate with `j`/`k`, search with `/`, press Enter to view a file's full content at the current commit.
+The file tree isn't just a list — it's a map of what happened. Files from the currently selected commit are highlighted: white for files shown in the diff grid, light grey for other files modified in the same commit. Every other file in the repository is also there, dimmed — you can browse the full repo state as of that commit. Navigate with `j`/`k`, search with `/`, press Enter to view a file. Changed files open with their diffs; everything else shows the file content at that point in history. Any grid cell can expand to a full floating window for large files.
 
 {% include video.html src="/assets/videos/raccoon/maximize-and-tree.mov" %}
 
