@@ -67,7 +67,7 @@ After clustering, a final filter enforced the arbitrage requirement: only keep c
 
 ## What survived
 
-The website ran for a while but eventually died. I couldn't get anyone interested in it. I tried reaching out to media outlets, YouTube creator groups — nobody cared. Either I'm a terrible marketer, or the tool wasn't useful to the people I thought it was for, or both. The data pipelines, the scraping infrastructure, the LibreTranslate setup, the GPT-powered cluster summaries — all gone.
+The website ran for a while but eventually died. I couldn't get anyone interested in it. I tried reaching out to media outlets, YouTube creator groups — nobody cared. Either I'm a terrible marketer, or the tool wasn't useful to the people I thought it was for, or both. The data pipelines, the scraping infrastructure, the LibreTranslate setup, the GPT-powered cluster summaries — all archived and put offline.
 
 But the clustering algorithm turned out to be useful beyond YouTube. It works on any data where records have sets of categorical attributes and you want to find groups with significant overlap. I extracted it into a standalone Python package.
 
