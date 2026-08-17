@@ -26,8 +26,4 @@ I also showed some of my own setups for longer planning and review sessions: usi
 
 The PDF is static, so it does not include the motion from the original presentation, but it has the full slide deck.
 
-## Certificate
-
-[Download the conference certificate.](/assets/docs/dss-ai-edition-2026/maciej-bajor-dss-ai-edition-2026-certificate.jpg)
-
-![Certificate for Maciej Bajor's lecture at Data Science Summit AI Edition 2026](/assets/docs/dss-ai-edition-2026/maciej-bajor-dss-ai-edition-2026-certificate.jpg)
+There is also a [conference certificate](https://api.fundacjaap.org.pl/api/Admin/Lecturer/2707af09-d81e-42f4-81c5-495655362fa6/Certificate/8aa7f2c0-89fb-4663-9d95-7921e0592601?lang=en) for the talk.
