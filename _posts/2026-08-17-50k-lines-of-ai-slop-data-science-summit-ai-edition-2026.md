@@ -16,13 +16,16 @@ The practical part of the talk focused on habits that make AI-assisted work more
 - keep pull requests small
 - treat code review as the bottleneck on purpose
 - use CI to catch obvious dead or unreachable code
+- use mutation testing to find tests that pass without really checking behavior
 - encode correctness in types where the language allows it
 - extend existing code instead of gluing new pieces onto the side
 - use custom tooling only when it actually improves the workflow
 
 I also showed some of my own setups for longer planning and review sessions: using a VPS with persistent terminal sessions, writing implementation plans into Obsidian, and using AI-generated diagrams to make pull requests easier to inspect.
 
-[Download the slides as a static PDF.](/assets/docs/dss-ai-edition-2026/50k-loc-ai-slop-data-science-summit-ai-edition-2026-slides.pdf)
+## Slides
+
+**[Download the slides as a static PDF.](/assets/docs/dss-ai-edition-2026/50k-loc-ai-slop-data-science-summit-ai-edition-2026-slides.pdf)**
 
 The PDF is static, so it does not include the motion from the original presentation, but it has the full slide deck.
 
