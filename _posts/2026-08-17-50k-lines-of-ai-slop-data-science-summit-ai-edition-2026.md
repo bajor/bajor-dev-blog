@@ -10,7 +10,7 @@ The talk was about working with AI coding assistants without losing control of t
 
 The main point was not that AI coding tools are useless. They are too powerful to ignore. The problem starts when generation speed outruns understanding. If I cannot explain the critical parts of a system, reason about the trade-offs, and challenge the output, I am not moving faster. I am creating long-term risk.
 
-The old good practices did not become less relevant because AI can generate code quickly. They became more important. Planning, small changes, code review, CI, type-level design, and maintainability are the things that keep generation from turning into a slot machine.
+The old good practices did not become less relevant because AI can generate code quickly. They became more important. Planning, small changes, code review, CI, and maintainability are the things that keep generation from turning into a slot machine.
 
 The practical part of the talk focused on habits that make AI-assisted work more reviewable:
 
@@ -19,7 +19,6 @@ The practical part of the talk focused on habits that make AI-assisted work more
 - treat code review as the bottleneck on purpose
 - use CI to catch obvious dead or unreachable code
 - use mutation testing to find tests that pass without really checking behavior
-- encode correctness in types where the language allows it
 - extend existing code instead of gluing new pieces onto the side
 - treat AI reviewers as filters, not actual reviewers
 - use custom tooling only when it actually improves the workflow
