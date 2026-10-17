@@ -4,9 +4,9 @@ title: Notes
 permalink: /notes/
 ---
 <a href="{{ '/' | relative_url }}">Back to home</a>
-<h1>Notes</h1>
+<h1>{{ page.title }}</h1>
 
-{% assign tags = site.data.notes | map: 'tags' | uniq | sort %}
+{% assign tags = site.data.notes | map: 'tags' | compact | uniq | sort %}
 <div class="note-filters" role="group" aria-label="Filter notes by tag" hidden>
   <button type="button" data-tag="" aria-pressed="true">All</button>
   {% for tag in tags %}
@@ -19,9 +19,11 @@ permalink: /notes/
   <li data-tags="{{ note.tags | jsonify | escape }}">
     {% if note.url %}
     <a href="{{ note.url | escape }}">{{ note.title | escape }}</a>
-    <span class="note-meta">({{ note.tags | join: ', ' | escape }})</span>
     {% else %}
     {{ note.title | escape }} <span class="note-meta">(Coming soon)</span>
+    {% endif %}
+    {% if note.tags.size > 0 %}
+    <span class="note-meta">({{ note.tags | join: ', ' | escape }})</span>
     {% endif %}
   </li>
   {% endfor %}

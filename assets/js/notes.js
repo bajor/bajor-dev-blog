@@ -2,7 +2,7 @@ const filters = document.querySelector(".note-filters");
 const buttons = filters.querySelectorAll("button");
 const notes = Array.from(document.querySelectorAll(".notes-list > li"), (element) => ({
   element,
-  tags: JSON.parse(element.dataset.tags),
+  tags: JSON.parse(element.dataset.tags) ?? [],
 }));
 
 filters.hidden = false;
