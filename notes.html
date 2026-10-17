@@ -1,0 +1,30 @@
+---
+layout: default
+title: Notes
+permalink: /notes/
+---
+<a href="{{ '/' | relative_url }}">Back to home</a>
+<h1>Notes</h1>
+
+{% assign tags = site.data.notes | map: 'tags' | uniq | sort %}
+<div class="note-filters" role="group" aria-label="Filter notes by tag" hidden>
+  <button type="button" data-tag="" aria-pressed="true">All</button>
+  {% for tag in tags %}
+  <button type="button" data-tag="{{ tag | escape }}" aria-pressed="false">{{ tag | escape }}</button>
+  {% endfor %}
+</div>
+
+<ul class="notes-list">
+  {% for note in site.data.notes %}
+  <li data-tags="{{ note.tags | jsonify | escape }}">
+    {% if note.url %}
+    <a href="{{ note.url | escape }}">{{ note.title | escape }}</a>
+    <span class="note-meta">({{ note.tags | join: ', ' | escape }})</span>
+    {% else %}
+    {{ note.title | escape }} <span class="note-meta">(Coming soon)</span>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+<script src="{{ '/assets/js/notes.js' | relative_url }}" defer></script>

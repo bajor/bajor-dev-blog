@@ -460,3 +460,24 @@ label input {
 .debug-toggle-label {
   text-align: right;
 }
+
+.note-filters:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1ch;
+  margin-bottom: var(--line-height);
+}
+
+.note-filters button[aria-pressed="true"] {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.note-filters button:focus-visible {
+  outline: var(--border-thickness) solid var(--text-color);
+  outline-offset: var(--border-thickness);
+}
+
+.note-meta {
+  color: var(--text-color-alt);
+}
