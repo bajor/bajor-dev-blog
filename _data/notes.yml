@@ -1,0 +1,10 @@
+# Tags are non-empty, case-sensitive strings; quote numbers and YAML boolean words.
+- title: GCP - Storage and data processing engines
+  url: https://bajor.github.io/notes-gcp-storage-and-data-processing-engines/
+  tags: [GCP, Storage, Data processing]
+
+- title: More notes 1
+  tags: []
+
+- title: More notes 2
+  tags: []
