@@ -6,7 +6,11 @@ date: 2024-06-23
 
 I built a website that tracked YouTube trends across Europe and tried to spot which ones had the potential to spread across borders. The idea was simple: if a video is trending in Poland and Germany but not yet in France, maybe it's about to show up there too. Content arbitrage, essentially — find the trend before it arrives.
 
-The [website is dead now](https://www.youtube.com/watch?v=3F9TdbzjDdE), but one piece of it survived: a clustering algorithm I had to write from scratch because nothing I found could handle the data I was working with. That algorithm ended up being the most interesting part of the whole project, so this is mostly about that.
+The website is dead now, but one piece of it survived: a clustering algorithm I had to write from scratch because nothing I found could handle the data I was working with. That algorithm ended up being the most interesting part of the whole project, so this is mostly about that.
+
+It was called Trendmigrate. Here's a short walkthrough from when it was still online:
+
+{% include youtube.html id="3F9TdbzjDdE" title="Trendmigrate.com - like google trends but for youtube, hobby project" %}
 
 ## The pipeline
 
