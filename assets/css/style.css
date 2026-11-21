@@ -193,6 +193,12 @@ img {
 video {
   border: var(--border-thickness) solid var(--text-color-alt);
 }
+iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: var(--border-thickness) solid var(--text-color-alt);
+}
 
 details {
   border: var(--border-thickness) solid var(--text-color);
